@@ -13,8 +13,9 @@ use Mix.Config
 # which you typically run after static files are built.
 config :alexa, Alexa.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [scheme: "https", host: "cryptic-fjord-45786.herokuapp.com", port: 433],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  force_ssl: [rewrite_on: [:x_forward_proto]]
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -52,10 +53,7 @@ config :logger, level: :info
 #
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
-#
-#     config :alexa, Alexa.Endpoint, server: true
-#
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
