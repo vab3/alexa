@@ -7,7 +7,7 @@ defmodule Alexa.AlexaController do
            "response" => %{
              "outputSpeech" => %{
                "type" => "PlainText",
-               "text" => "Hello World!",
+               "text" => "Rock!"
              },
              "shouldEndSession" => true
            }
