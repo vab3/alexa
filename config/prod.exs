@@ -15,7 +15,7 @@ config :alexa, Alexa.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "cryptic-fjord-45786.herokuapp.com", port: 433],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  force_ssl: [rewrite_on: [:x_forward_proto]]
+  force_ssl: [rewrite_on: [:x_forwarded_proto]]
 
 # Do not print debug messages in production
 config :logger, level: :info
