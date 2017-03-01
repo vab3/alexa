@@ -20,7 +20,8 @@ defmodule Alexa.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Alexa do
-  #   pipe_through :api
-  # end
+  scope "/api", Alexa do
+    pipe_through :api
+    post "/alexa", AlexaController, :rock_paper_scissors
+  end
 end
